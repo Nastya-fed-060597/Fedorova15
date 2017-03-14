@@ -15,7 +15,6 @@ namespace Game15
 
             if (canwedo(gets))
             {
-
                 int temp = 0;
                 field = new int[Convert.ToInt32(Math.Sqrt(gets.Length)), Convert.ToInt32(Math.Sqrt(gets.Length))];
                 for (int i = 0; i < Math.Sqrt(gets.Length); i++)

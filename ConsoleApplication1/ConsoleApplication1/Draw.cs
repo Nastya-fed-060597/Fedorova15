@@ -21,6 +21,6 @@ namespace Game15
                 }
                 Console.WriteLine();
             }
-        }
+        } 
     }
 }

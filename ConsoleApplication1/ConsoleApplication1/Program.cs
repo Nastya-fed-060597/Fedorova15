@@ -11,7 +11,6 @@ namespace Game15
     {
         static void Main(string[] args)
         {
-
             {
                 var game = new Game(1, 2, 3, 4, 5, 6, 8, 7, 0);
                 while (!game.WIN())

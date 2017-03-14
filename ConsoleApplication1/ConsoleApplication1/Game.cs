@@ -13,24 +13,22 @@ namespace Game15
         public Game(params int[] gets)
         {
 
-            if (canwedo(gets))
+            if (can_we_do(gets))
             {
-                int temp = 0;
+                int t = 0;
                 field = new int[Convert.ToInt32(Math.Sqrt(gets.Length)), Convert.ToInt32(Math.Sqrt(gets.Length))];
                 for (int i = 0; i < Math.Sqrt(gets.Length); i++)
                 {
                     for (int j = 0; j < Math.Sqrt(gets.Length); j++)
                     {
-                        field[i, j] = gets[temp];
-                        temp++;
+                        field[i, j] = gets[t];
+                        t++;
                     }
                 }
 
             }
 
         }
-
-
         public bool Shift(int val)
         {
             int i1 = 0;
@@ -64,32 +62,7 @@ namespace Game15
                 return false;
             }
         }
-
-        public bool WIN()
-        {
-            bool status = true;
-            int[] temper = new int[field.Length];
-            int temp = 0;
-            foreach (var item in field)
-            {
-                temper[temp] = item;
-                temp++;
-            }
-            for (int i = 0; i < temper.Length - 1; i++)
-            {
-                if ((i != temper.Length - 2) && (temper[i] > temper[i + 1]))
-                {
-                    status = false;
-                }
-                if (temper[temper.Length - 1] != 0)
-                {
-                    status = false;
-                }
-            }
-            return status;
-        }
-
-        private bool canwedo(int[] gets)
+        private bool can_we_do(int[] gets)
         {
             bool ret = true;
             int gameline = (int)Math.Sqrt(gets.Length);
@@ -124,6 +97,31 @@ namespace Game15
             }
             return ret;
         }
+        public bool win()
+        {
+            bool status = true;
+            int[] temper = new int[field.Length];
+            int temp = 0;
+            foreach (var item in field)
+            {
+                temper[temp] = item;
+                temp++;
+            }
+            for (int i = 0; i < temper.Length - 1; i++)
+            {
+                if ((i != temper.Length - 2) && (temper[i] > temper[i + 1]))
+                {
+                    status = false;
+                }
+                if (temper[temper.Length - 1] != 0)
+                {
+                    status = false;
+                }
+            }
+            return status;
+        }
+
+        
 
     }
 }

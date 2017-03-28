@@ -12,7 +12,7 @@ namespace Game15
         static void Main(string[] args)
         {
             {
-                var game = new Game(1, 2, 3, 4, 5, 6, 7, 0, 8);
+                var game = new Game3(1, 2, 3, 4, 5, 6, 7, 0, 8);
                 while (!game.win())
                 {
                     Draw.Print(game);
